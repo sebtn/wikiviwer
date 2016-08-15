@@ -2,8 +2,8 @@ $( document ).ready(function() {
 
   $('#search-button').on('click', function(){
     var inputText = $('#search-box').val()
-  
-    $.post('https://en.wikipedia.org/w/api.php?action=query&generator=search&utf8=1&gsrsearch=' + inputText +'&prop=extracts&exintro=1&exlimit=20&exchars=200&format=json&origin=*', function(data){
+
+    $.post('https://en.wikipedia.org/w/api.php?action=query&generator=search&utf8=1&gsrsearch=' + inputText +'&prop=extracts&exsentences=2&exintro=1&exlimit=10&format=json&origin=*', function(data){
       var wikisObj = (data.query.pages)
       var ul = $('<ul/>')
       $.each(wikisObj, function(key, value) {
